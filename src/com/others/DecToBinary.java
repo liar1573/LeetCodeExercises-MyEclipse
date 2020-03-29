@@ -34,9 +34,10 @@ public class DecToBinary {
 //		LinkedList<Integer> result = testDecToBinary.decToBin(input);
 //		testDecToBinary.showList(result);
 		
-		long input = -10;
+		long input = 10;
 		DecToBinary testDecToBinary = new DecToBinary();
-		LinkedList<Long> result = testDecToBinary.decToBinUpdate(input);
+		//LinkedList<Long> result = testDecToBinary.decToBinUpdate(input);
+		LinkedList<Character> result = testDecToBinary.decToBinBit(input);
 		testDecToBinary.showList(result);
 		
 		//测试负数的除法和取余
@@ -117,6 +118,25 @@ public class DecToBinary {
 		
 		return result;
 		
+	}
+	
+	public LinkedList<Character> decToBinBit(long input){
+		LinkedList<Character> result = new LinkedList<Character>();
+		//搜了下Java long有64位，即[-2^63,2^63-1]这个范围有点太大了一般用不到。。
+		//默认高位0不显示好了
+		//其实后来想到result里面其实并不储占数值，只是存储0-1二进制符号，并不需要用long类型
+		//用最小的数值类型或者用String类型就可以了
+		do {
+			if (1 == (input & 1)) {
+				result.add('1');
+			}else {
+				result.add('0');
+			}
+			input = input >>> 1;
+			//注意这种算法返回的是二进制补码 ，即负数的符号位一定是1
+		} while (input != 0);
+		
+		return result;
 	}
 	
 	private void showList(LinkedList inputList) {
