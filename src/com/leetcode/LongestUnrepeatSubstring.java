@@ -31,8 +31,8 @@ public class LongestUnrepeatSubstring {
 //		for (Character character : show) {
 //			System.out.print(character);
 //		}
-//		System.out.print(testL.lengthOfLongestSubstringWay2(""));
-		System.out.print(testL.lengthOfLongestSubstringWay3("pwwkew"));
+//		System.out.print(testL.lengthOfLongestSubstringWay1(""));
+		System.out.print(testL.lengthOfLongestSubstringWay2("pwwkew"));
 	}
 	
 	public ArrayList<Character> LongestSubstring(String s) {
