@@ -1,6 +1,8 @@
 /**Trie.java
  * com.leetcode.trie
  * LC 208  构建一棵字典树（内容只有小写字母），需要实现insert、search和startWith方法
+ * 根据电话号码归属地问题对TrieNode结构进行了一定的修改，添加了String address字段
+ * 该字段在isEnd为真时进行赋值，初步测试结果正常
  * @author liar
  * 2020年4月2日 下午8:19:24
  * @version 1.0
