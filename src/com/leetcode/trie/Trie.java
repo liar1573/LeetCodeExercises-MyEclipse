@@ -86,6 +86,22 @@ public class Trie {
 	//在判断指针是否为null的同时加上对isEnd的判断，如果为null的同时isEnd为真则返回对应的规则
 	//如果为null但是isEnd是假则返回nowhere
 	//同时TrieNode需要加一个字段String address，只有在isEnd为true的时候才有赋值，否则为null
+	
+	public boolean startWith(String word) {
+		TrieNode node = this.root;
+		for (int i = 0; i < word.length(); i++) {
+			char tempChar = word.charAt(i);
+			if (node.children[tempChar - 'a'] != null) {
+				node = node.children[tempChar - 'a'];
+			} else {
+				//break;//这里其实比起break,直接返回false更快
+				return false;
+			}
+		}
+		//startWith方法感觉这样实现应该就可以了吧，前面几个都找到了，没有在for中直接退出
+		return true;
+	}
+	
 }
 
 class TrieNode{
