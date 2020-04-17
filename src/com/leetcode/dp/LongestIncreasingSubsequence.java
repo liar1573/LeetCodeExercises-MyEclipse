@@ -1,3 +1,8 @@
+/*
+ * LC 300 最长上升子序列
+ * 有一个N*N的dp解法，和一个nlogn的借助二分查找维护最长上升子序列的解法
+ */
+
 package com.leetcode.dp;
 import java.util.ArrayList;
 import java.util.Arrays;
