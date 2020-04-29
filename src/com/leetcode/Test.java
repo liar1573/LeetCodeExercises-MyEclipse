@@ -26,27 +26,10 @@ public class Test {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		//手动构建了一颗简单的树
-		TreeNode aNode = new TreeNode(6);
-		TreeNode bNode = new TreeNode(3);
-		bNode.left = aNode;
-		TreeNode cNode = new TreeNode(4);
-		TreeNode dNode = new TreeNode(5);
-		TreeNode eNode = new TreeNode(2);
-		eNode.left = cNode;
-		eNode.right = dNode;
-		TreeNode fNode = new TreeNode(1);
-		fNode.left = eNode;
-		fNode.right = bNode;
-		
-//		breadthFirstSearch(fNode);
-		
-//		LinkedList<Object> testLinkedList = new LinkedList<Object>();
-//		testLinkedList.add(null);
-//		System.out.println(testLinkedList.size());
-//		if (null == testLinkedList.peek()) {
-//			System.out.println("true");
-//		}
+		String[] para = "PUSH 20".split(" ");
+		System.out.println(para.length);
+		System.out.println(para[0]);
+		System.out.println(para[1]);
 
 	}
 	
