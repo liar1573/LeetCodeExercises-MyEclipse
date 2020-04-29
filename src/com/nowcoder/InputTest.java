@@ -7,6 +7,8 @@
  */
 package com.nowcoder;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class InputTest {
@@ -17,7 +19,7 @@ public class InputTest {
 		
 		InputTest inputTest = new InputTest();
 //		inputTest.testCase1();
-		inputTest.testCase2();
+		inputTest.testCase4();
 		
 	}
 	
@@ -91,6 +93,39 @@ public class InputTest {
 		
 	}
 	
-	
+	private void testCase3() {
+		Scanner in = new Scanner(System.in);
+		ArrayList<Integer> result = new ArrayList<Integer>();
+		while (in.hasNext()) {
+			//注意到这里一定要使用nextLine,不然空格会提前中断读取
+			String[] numStrings = in.nextLine().split(" ");
+			int sum = 0;
+            for(int j = 0;j < numStrings.length;j++)
+                sum += Integer.parseInt(numStrings[j]);
+            result.add(sum);  			
+		}
+		
+		 for(int j = 0;j < result.size();j++)
+	            System.out.println(result.get(j));
+	}
 
+	private void testCase4() {
+		Scanner in = new Scanner(System.in);
+        while (in.hasNext()) {
+            int times = in.nextInt();
+            String blank = in.nextLine();
+            String[] strings = in.nextLine().split(" ");
+            System.out.println("分割后字符串长度" + strings.length);
+            //这里如果输入格式正确，Strings的长度应该是刚好等于times的
+            //这么说起来其实times完全无用，直接用str.length就可以了
+            Arrays.sort(strings);
+            StringBuilder sBuilder = new StringBuilder();
+		    for (int i = 0; i < strings.length - 1; i++)
+			//注意到这里提示了最后一个输出后面不能跟空格，所以这里要稍微特殊处理一下
+			    sBuilder.append(strings[i] + " ");
+            //注意到这里对于空串长度也至少为1，所以不用担心数组下标越界
+		    sBuilder.append(strings[strings.length - 1]);
+		    System.out.println(sBuilder.toString()); 
+	}
+}
 }
