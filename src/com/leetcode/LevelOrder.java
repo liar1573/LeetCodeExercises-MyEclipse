@@ -12,7 +12,7 @@ public class LevelOrder {
 
 	}
 	
-	public List<List<Integer>> levelOrder2(TreeNode root) {
+	public static List<List<Integer>> levelOrder2(TreeNode root) {
 		//第二版根据参考python解法的改进版，去掉了中转队列，只使用了一个队列
     	if (null == root) {
     		return new ArrayList<List<Integer>>();
