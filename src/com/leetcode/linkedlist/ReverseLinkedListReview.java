@@ -50,7 +50,21 @@ public class ReverseLinkedListReview {
 	    return remaining;	    
 	}
 	
-	
+	public ListNode reverseListExample(ListNode head) {
+		//补充算法40讲老师给出的经典解法
+		ListNode cur = head, pre = null, temp = null;
+		//原参考答案是Python的，有一种并行赋值可以少一个临时变量，但是java一定需要三个临时变量
+		
+		while (cur != null) {		
+			temp = cur.next;//这里必须要先用temp缓存cur.next，否则后面链就断开了
+			cur.next = pre;
+			pre = cur;
+			//cur = cur.next;
+			cur = temp;//然后这里需要使用temp取代cur.next对cur进行赋值
+		}
+		
+		return pre;
+	}
 	
 }
 
