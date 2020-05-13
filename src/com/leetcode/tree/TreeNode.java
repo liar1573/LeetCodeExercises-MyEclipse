@@ -10,8 +10,8 @@ package com.leetcode.tree;
 
 
 public class TreeNode {
-	int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode(int x) { val = x; }
+	public int val;  //为了方便包外导入调试，修饰符全部改为public
+    public TreeNode left;
+    public TreeNode right;
+    public TreeNode(int x) { val = x; }
 }
