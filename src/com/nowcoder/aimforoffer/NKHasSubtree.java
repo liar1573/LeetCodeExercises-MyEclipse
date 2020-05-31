@@ -1,19 +1,16 @@
 /**NKHasSubtree.java
  * com.nowcoder.aimforoffer
  * TODO
+ * 剑指-树的子结构，输入两棵二叉树A，B，判断B是不是A的子结构。（ps：我们约定空树不是任意一个树的子结构）。
+ * 这题题目卡了很久。。子结构一开始理解错了，dfs判断条件一开始也想错了。
  * @author liar
  * 2020年5月30日 上午10:00:18
  * @version 1.0
  */
 package com.nowcoder.aimforoffer;
 import com.leetcode.tree.TreeNode;
-
 import com.leetcode.tree.BuildTreePreInOrderExample;
 
-/**
- * @author liar
- *
- */
 public class NKHasSubtree {
 	
 	public static void main(String[] args) {
