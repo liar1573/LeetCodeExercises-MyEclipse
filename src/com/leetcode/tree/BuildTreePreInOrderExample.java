@@ -12,12 +12,12 @@ package com.leetcode.tree;
 
 
 public class BuildTreePreInOrderExample {
-	public TreeNode buildTree(int[] preorder, int[] inorder) {
+	public static TreeNode buildTree(int[] preorder, int[] inorder) {
         TreeNode root=buildTree(preorder,0,preorder.length-1,inorder,0,inorder.length-1);
         return root;
     }
     
-    private TreeNode buildTree(int [] pre,int startPre,int endPre,int [] in,int startIn,int endIn){                 
+    private static TreeNode buildTree(int [] pre,int startPre,int endPre,int [] in,int startIn,int endIn){                 
         if(startPre>endPre||startIn>endIn)            
             return null;        
         TreeNode root=new TreeNode(pre[startPre]);                 
