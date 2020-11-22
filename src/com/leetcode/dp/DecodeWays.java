@@ -20,6 +20,8 @@ public class DecodeWays {
 		
 	}
 	
+
+	
 	public int numDecodings(String s) {
 		//用于下标调整前的备份
         //注意到题设给出了这里输入一定是非空字符串序列

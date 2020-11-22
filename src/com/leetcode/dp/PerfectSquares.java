@@ -11,45 +11,45 @@ public class PerfectSquares {
 	
 	public static void main(String[] args) {
 		PerfectSquares test = new PerfectSquares();
-		System.out.println(test.numSquares(4));
+		System.out.println(test.numSquares(12));
 		
 	}
 	
-	public int numSquares(int n) {
-		int square = (int) Math.sqrt(n);
-		int[] array = new int[square];
-		int[] dp = new int[n + 1];
-		for (int i = 0; i < array.length; i++)
-			array[i] = (i + 1) * (i + 1); 
-		for (int i = 0; i < dp.length; i++)
-			dp[i] = i;
-		
-		for (int i = 1; i < dp.length; i++) {
-			for (int j = 0; j < array.length; j++) {
-				if(array[j] > i)
-					break;
-				dp[i] = Math.min(dp[i], dp[i - array[j]] + 1); 
-			}
-		}
-		 
-		return dp[n];
-    }
+//	public int numSquares(int n) {
+//		int square = (int) Math.sqrt(n);
+//		int[] array = new int[square];
+//		int[] dp = new int[n + 1];
+//		for (int i = 0; i < array.length; i++)
+//			array[i] = (i + 1) * (i + 1); 
+//		for (int i = 0; i < dp.length; i++)
+//			dp[i] = i;
+//		
+//		for (int i = 1; i < dp.length; i++) {
+//			for (int j = 0; j < array.length; j++) {
+//				if(array[j] > i)
+//					break;
+//				dp[i] = Math.min(dp[i], dp[i - array[j]] + 1); 
+//			}
+//		}
+//		 
+//		return dp[n];
+//    }
 	
 	//解法3，贪心枚举
-//	public int numSquares(int n) {
-//	    this.square_nums.clear();
-//
-//	    for (int i = 1; i * i <= n; ++i) {
-//	      this.square_nums.add(i * i);
-//	    }
-//
-//	    int count = 1;
-//	    for (; count <= n; ++count) {
-//	      if (is_divided_by(n, count))
-//	        return count;
-//	    }
-//	    return count;
-//	  }
+	public int numSquares(int n) {
+	    this.square_nums.clear();
+
+	    for (int i = 1; i * i <= n; ++i) {
+	      this.square_nums.add(i * i);
+	    }
+
+	    int count = 1;
+	    for (; count <= n; ++count) {
+	      if (is_divided_by(n, count))
+	        return count;
+	    }
+	    return count;
+	  }
 
 	  protected boolean is_divided_by(int n, int count) {
 		    if (count == 1) {
