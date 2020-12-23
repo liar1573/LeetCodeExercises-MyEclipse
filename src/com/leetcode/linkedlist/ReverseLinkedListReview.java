@@ -39,7 +39,7 @@ public class ReverseLinkedListReview {
 	    if(head == null || head.next == null){
 	        return head;
 	    }
-	    ListNode remaining = reverseList(head.next);
+	    ListNode remaining = reverseListRecursion(head.next);
 	    //代码逻辑基本上是一样的感觉这个方法每一次迭代好像只能反转离头指针最近的两个节点，然后再要依靠递归去不停的每次反转两个节点
 	    //效率好像不怎么高。。（虽然运行结果也是0ms）
 	    
